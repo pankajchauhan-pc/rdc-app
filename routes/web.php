@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,5 +21,9 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/logout', function (Request $request) {
+    $request->session()->forget('user');
+    return redirect('login');
+});
 Route::post('/login',[UsersController::class,'login']);
 Route::get('/',[DashboardController::class,'index']);
