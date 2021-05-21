@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/', function () {
+    return view('welcome');
 });
 
-Route::get('/logout', function (Request $request) {
-    $request->session()->forget('user');
-    return redirect('login');
-});
-Route::post('/login',[UsersController::class,'login']);
-Route::get('/',[DashboardController::class,'index']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/users', [App\Http\Controllers\UsersController::class, 'index'])->name('users');

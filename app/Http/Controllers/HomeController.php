@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 
-class UsersController extends Controller
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,7 +23,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-        return view('users',['users'=>$users]);
+        return view('home');
     }
 }
