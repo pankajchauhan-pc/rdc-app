@@ -10,7 +10,7 @@
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
-            <button type="button" class="btn btn-gradient-primary"><i class="mdi mdi-account-plus"></i>&nbsp;&nbsp;Add New User</button>
+              <a href="users/add" class="btn btn-gradient-primary"><i class="mdi mdi-account-plus"></i>&nbsp;&nbsp;Add New User</a>
           </ul>
         </nav>
     </div>
