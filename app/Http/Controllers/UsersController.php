@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Facade\FlareClient\View;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -26,5 +27,10 @@ class UsersController extends Controller
     {
         $users = User::all();
         return view('users',['users'=>$users]);
+    }
+
+    public function add()
+    {
+        return View('users.addUser');
     }
 }
